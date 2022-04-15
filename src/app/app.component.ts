@@ -9,7 +9,7 @@ export class AppComponent {
   title: string = 'counter';
   @Input() number: number = 0;
 
-  changeNumber(isIncrease: boolean){
+  changeNumber(isIncrease: boolean): void{
     if(isIncrease){
       this.number += 1;
     }
