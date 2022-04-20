@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NumberService } from '../number.service';
+import { NumberService } from '../services/number.service';
 
 @Component({
   selector: 'app-counter',

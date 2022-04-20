@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
-import { NumberService } from './number.service';
+import { NumberService } from './services/number.service';
 
 @NgModule({
   declarations: [
