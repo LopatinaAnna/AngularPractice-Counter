@@ -1,5 +1,14 @@
 <div class="card-container">
-    <input type="number" [(ngModel)]="number" />
-    <a class="circle-link" (click)="increaseNumber()">+</a>
-    <a class="circle-link" (click)="decreaseNumber()">-</a>
+    <mat-form-field appearance="fill">
+        <input type="number" matInput [(ngModel)]="number">
+    </mat-form-field>
+    <a class="circle-link" (click)="increaseNumber()">
+        <mat-icon>add</mat-icon>
+    </a>
+    <a class="circle-link" (click)="decreaseNumber()">
+        <mat-icon>remove</mat-icon>
+    </a>
+    <a class="circle-link" (click)="openSettingsDialog()">
+        <mat-icon>settings</mat-icon>
+    </a>
 </div>
