@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'counter';
-  @Input() number: number = 0;
-
-  changeNumber(isIncrease: boolean): void{
-    if(isIncrease){
-      this.number += 1;
-    }
-    else{
-      this.number -= 1;
-    }
-  }
 }
