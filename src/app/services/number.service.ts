@@ -7,15 +7,15 @@ export class NumberService {
 
   constructor() { }
 
-  increaseNumber(number: number, step: number) {
+  increaseNumber(number: number, step: number): number {
     return number + step;
   }
 
-  decreaseNumber(number: number, step: number) {
+  decreaseNumber(number: number, step: number): number {
     return number - step;
   }
 
-  updateNumber(currentNumber: number, newNumber: number) {
+  updateNumber(currentNumber: number, newNumber: number): number {
     if (newNumber) {
       return newNumber;
     } else {
@@ -23,7 +23,7 @@ export class NumberService {
     }
   }
 
-  updateStep(currentStep: number, newStep: number) {
+  updateStep(currentStep: number, newStep: number): number {
     if (newStep > 0) {
       return newStep;
     } else {

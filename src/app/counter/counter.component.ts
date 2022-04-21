@@ -3,6 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { NumberService } from '../services/number.service';
 import { CounterSettingsDialogComponent } from '../counter-settings-dialog/counter-settings-dialog.component';
 
+interface DialogData {
+  number: number;
+  step: number;
+}
+
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
@@ -14,24 +19,27 @@ export class CounterComponent {
   number: number = 0;
   step: number = 1;
 
+  openSettingsDialog(): void {
+    const dialogRef = this.dialog.open(CounterSettingsDialogComponent);
+
+    dialogRef.componentInstance.settingsDialogData = {
+      number: this.number,
+      step: this.step
+    };
+
+    dialogRef.componentInstance.onSettingsChanged.subscribe((receivedData: DialogData) => {
+      if (receivedData != undefined) {
+        this.number = this.numberService.updateNumber(this.number, receivedData.number);
+        this.step = this.numberService.updateStep(this.step, receivedData.step);
+      }
+    })
+  }
+
   increaseNumber(): void {
     this.number = this.numberService.increaseNumber(this.number, this.step);
   }
 
   decreaseNumber(): void {
     this.number = this.numberService.decreaseNumber(this.number, this.step);
-  }
-
-  openSettingsDialog(): void {
-    const dialogRef = this.dialog.open(CounterSettingsDialogComponent, {
-      data: { number: this.number, step: this.step },
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result != undefined) {
-        this.number = this.numberService.updateNumber(this.number, result.number);
-        this.step = this.numberService.updateStep(this.step, result.step);
-      }
-    });
   }
 }

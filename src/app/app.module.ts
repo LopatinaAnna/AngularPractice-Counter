@@ -21,6 +21,7 @@ import { MaterialModule } from '../material.module';
     MaterialModule
   ],
   providers: [NumberService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CounterSettingsDialogComponent]
 })
 export class AppModule { }
