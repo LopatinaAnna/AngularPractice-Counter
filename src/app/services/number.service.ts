@@ -16,18 +16,16 @@ export class NumberService {
   }
 
   updateNumber(currentNumber: number, newNumber: number): number {
-    if (newNumber) {
+    if (!!newNumber) {
       return newNumber;
-    } else {
-      return currentNumber;
     }
+    return currentNumber;
   }
 
   updateStep(currentStep: number, newStep: number): number {
     if (newStep > 0) {
       return newStep;
-    } else {
-      return currentStep;
     }
+    return currentStep;
   }
 }

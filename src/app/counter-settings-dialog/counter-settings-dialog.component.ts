@@ -7,8 +7,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CounterSettingsDialogComponent {
 
-  @Input() settingsDialogData: any;
-  @Output() onSettingsChanged: EventEmitter<any> = new EventEmitter();
+  settingsDialogData: any;
+  onSettingsChanged: EventEmitter<any> = new EventEmitter();
 
   onSaveSettingsClick(): void {
     this.onSettingsChanged.emit(this.settingsDialogData);
