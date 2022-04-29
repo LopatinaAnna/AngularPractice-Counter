@@ -11,8 +11,7 @@ export class SettingInputComponent {
   @Input() minValue!: number;
   @Output() valueChange = new EventEmitter<number>();
 
-  onValueChange(model: number) {
-    this.value = model;
-    this.valueChange.emit(this.value);
+  onValueChange(value: number): void {
+    this.valueChange.emit(value);
   }
 }
