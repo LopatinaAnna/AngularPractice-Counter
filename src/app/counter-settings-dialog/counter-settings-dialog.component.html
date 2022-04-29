@@ -2,18 +2,10 @@
 <mat-dialog-content>
     <mat-tab-group mat-align-tabs="start">
         <mat-tab label="Value">
-            <p align="center">
-                <mat-form-field appearance="fill">
-                    <input type="number" matInput [(ngModel)]="settingsDialogData.number">
-                </mat-form-field>
-            </p>
+            <app-setting-input [(value)]="settingsDialogData.number"></app-setting-input>
         </mat-tab>
         <mat-tab label="Step">
-            <p align="center">
-                <mat-form-field appearance="fill">
-                    <input type="number" min="1" matInput [(ngModel)]="settingsDialogData.step">
-                </mat-form-field>
-            </p>
+            <app-setting-input [(value)]="settingsDialogData.step" [minValue]="1"></app-setting-input>
         </mat-tab>
     </mat-tab-group>
 </mat-dialog-content>
