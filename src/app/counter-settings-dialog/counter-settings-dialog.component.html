@@ -2,10 +2,10 @@
 <mat-dialog-content>
     <mat-tab-group mat-align-tabs="start">
         <mat-tab label="Value">
-            <app-setting-input [(value)]="settingsDialogData.number"></app-setting-input>
+            <app-setting-input [value]="settingsDialogData.number" (valueChange)="onNumberChange($event)"></app-setting-input>
         </mat-tab>
         <mat-tab label="Step">
-            <app-setting-input [(value)]="settingsDialogData.step" [minValue]="1"></app-setting-input>
+            <app-setting-input [value]="settingsDialogData.step" [minValue]="1" (valueChange)="onStepChange($event)"></app-setting-input>
         </mat-tab>
     </mat-tab-group>
 </mat-dialog-content>

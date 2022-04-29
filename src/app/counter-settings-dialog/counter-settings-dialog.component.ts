@@ -13,4 +13,12 @@ export class CounterSettingsDialogComponent {
   onSaveSettingsClick(): void {
     this.onSettingsChanged.emit(this.settingsDialogData);
   }
+
+  onNumberChange(number: number) {
+    this.settingsDialogData.number = number;
+  }
+
+  onStepChange(step: number) {
+    this.settingsDialogData.step = step;
+  }
 }
