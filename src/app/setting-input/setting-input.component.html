@@ -1,5 +1,16 @@
-<p align="center">
-    <mat-form-field appearance="fill">
-        <input type="number" matInput [min]="minValue" [ngModel]="value" (ngModelChange)="onValueChange($event)">
-    </mat-form-field>
-</p>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Value">
+        <p align="center">
+            <mat-form-field appearance="fill">
+                <input type="number" matInput [ngModel]="number" (ngModelChange)="onNumberChange($event)">
+            </mat-form-field>
+        </p>
+    </mat-tab>
+    <mat-tab label="Step">
+        <p align="center">
+            <mat-form-field appearance="fill">
+                <input type="number" matInput min="1" [ngModel]="step" (ngModelChange)="onStepChange($event)">
+            </mat-form-field>
+        </p>
+    </mat-tab>
+</mat-tab-group>

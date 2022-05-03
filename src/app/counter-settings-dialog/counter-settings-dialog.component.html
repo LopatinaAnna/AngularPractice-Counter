@@ -1,13 +1,6 @@
 <h2 mat-dialog-title>Settings</h2>
 <mat-dialog-content>
-    <mat-tab-group mat-align-tabs="start">
-        <mat-tab label="Value">
-            <app-setting-input [value]="settingsDialogData.number" (valueChange)="onNumberChange($event)"></app-setting-input>
-        </mat-tab>
-        <mat-tab label="Step">
-            <app-setting-input [value]="settingsDialogData.step" [minValue]="1" (valueChange)="onStepChange($event)"></app-setting-input>
-        </mat-tab>
-    </mat-tab-group>
+    <app-setting-input></app-setting-input>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
     <button mat-button (click)="onSaveSettingsClick()" mat-dialog-close cdkFocusInitial>Save</button>

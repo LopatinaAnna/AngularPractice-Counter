@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-setting-input',
@@ -7,11 +8,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SettingInputComponent {
 
-  @Input() value!: number;
-  @Input() minValue!: number;
-  @Output() valueChange = new EventEmitter<number>();
+  number?: number
+  step?: number
 
-  onValueChange(value: number): void {
-    this.valueChange.emit(value);
+  constructor(public dataService: DataService) {
+    this.dataService.numberSubject$.subscribe(val => this.number = val)
+    this.dataService.stepSubject$.subscribe(val => this.step = val)
+  }
+
+  onNumberChange(value: number): void {
+    this.dataService.updateNumber(value)
+  }
+
+  onStepChange(value: number): void {
+    this.dataService.updateStep(value)
   }
 }
